@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --pri: #4f46e5;
+  --acc: #4f46e5;
+  --cr: 16px;
+}
+
+@layer base {
+  html {
+    font-family: "DM Sans", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Arabic", system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: "Plus Jakarta Sans", "Noto Sans Bengali", "Noto Sans Devanagari", "Noto Sans Arabic", system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.routine-card {
+  border-radius: var(--cr, 16px);
+}
+
+.routine-hero {
+  border-radius: calc(var(--cr, 16px) + 6px);
+  background: linear-gradient(135deg, var(--acc, #4f46e5), color-mix(in srgb, var(--acc, #4f46e5) 62%, #7c3aed));
+}
+
+body[data-cs="square"] {
+  --cr: 6px;
+}
+
+body[data-cs="round"] {
+  --cr: 16px;
+}
+
+body[data-cs="pill"] {
+  --cr: 28px;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "My Routine",
+  "description": "A daily routine planner, live task timer, 24-hour time budget visualizer, and habit journal with multilingual support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
