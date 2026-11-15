@@ -16,6 +16,7 @@ import { ACCENT_SWATCHES, resizeWallpaperFile } from '../utils/storage';
 import { HeroCard } from './HeroCard';
 import { TaskCard } from './TaskCard';
 import { TwentyFourHourChart } from './TwentyFourHourChart';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface SettingsViewProps {
   state: AppState;
@@ -231,6 +232,10 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             </button>
           </div>
         </section>
+
+        <div className="pt-1">
+          <PWAInstallButton />
+        </div>
       </div>
 
       {/* Right column: Layout options with Live Preview */}

@@ -18,6 +18,7 @@ import { CalendarView } from './components/CalendarView';
 import { SettingsView } from './components/SettingsView';
 import { BackupView } from './components/BackupView';
 import { CountryModal } from './components/CountryModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
 
 function getTabFromHash(): TabKey {
   const hash = window.location.hash.slice(1);
@@ -388,6 +389,7 @@ export default function App() {
           onClose={() => setCountryModalOpen(false)}
         />
       )}
+      <OfflineIndicator />
     </div>
   );
 }

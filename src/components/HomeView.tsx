@@ -14,6 +14,7 @@ import { tr } from '../data/i18n';
 import { HeroCard } from './HeroCard';
 import { TaskCard } from './TaskCard';
 import { TwentyFourHourChart, TwentyFourHourModal } from './TwentyFourHourChart';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface HomeViewProps {
   state: AppState;
@@ -146,20 +147,23 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <h2 id="todays-tasks-heading" className={headingClass}>
                 {tr('todaysTasks', lang)}
               </h2>
-              <button
-                type="button"
-                onClick={handleDesktopClear}
-                className={`hidden md:inline-flex items-center gap-1.5 min-h-[36px] px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
-                  armedClear
-                    ? 'bg-red-600 text-white'
-                    : hasWallpaper
-                      ? 'bg-white/90 dark:bg-slate-900/90 text-red-600 dark:text-red-400 hover:bg-white'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400'
-                }`}
-              >
-                <Trash2 className="w-3.5 h-3.5" />
-                <span>{armedClear ? tr('sureTapAgain', lang) : tr('clearToday', lang)}</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <PWAInstallButton />
+                <button
+                  type="button"
+                  onClick={handleDesktopClear}
+                  className={`hidden md:inline-flex items-center gap-1.5 min-h-[36px] px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                    armedClear
+                      ? 'bg-red-600 text-white'
+                      : hasWallpaper
+                        ? 'bg-white/90 dark:bg-slate-900/90 text-red-600 dark:text-red-400 hover:bg-white'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400'
+                  }`}
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                  <span>{armedClear ? tr('sureTapAgain', lang) : tr('clearToday', lang)}</span>
+                </button>
+              </div>
             </div>
 
             {!todayLog.tasks.length ? (
